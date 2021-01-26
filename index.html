@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulario de registro con múltiples pasos</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div class="root">
+        <form action="" class="form-register">
+            <div class="form-register__header">
+                <ul class="progressbar">
+                    <li class="progressbar__option active">paso 1</li>
+                    <li class="progressbar__option">paso 2</li>
+                    <li class="progressbar__option">paso 3</li>
+                </ul>
+                <h1 class="form-register__title">Admisión al Doctorado</h1>
+            </div>
+            <div class="form-register__body">
+                <div class="step active" id="step-1">
+                    <div class="step__header">
+                        <h2 class="step__title">Datos personales <small>(Paso 1)</small></h2>
+                    </div>
+                    <div class="step__body">
+                        <input type="text" placeholder="Nombre completo" class="step__input">
+                        <input type="text" placeholder="Lugar de nacimiento" class="step__input">
+                        <div class="Hoy step__input" >
+                          <p>Fecha de nacimiento</p><br> 
+                          <input type="date" name="Fecha" class="step__input">
+                        </div>
+                        <input type="text" placeholder="Nacionalidad" class="step__input">
+                        <input type="text" placeholder="Estado civil" class="step__input">
+                    </div>
+                    <div class="step__footer">
+                        <button type="button" class="step__button step__button--next" data-to_step="2" data-step="1">Siguiente</button>
+                    </div>
+                </div>
+                <div class="step" id="step-2">
+                    <div class="step__header">
+                    <h2 class="step__title">Datos personales <small>(Paso 2)</small></h2>
+                    </div>
+                    <div class="step__body">
+                       <div class="radio step__input" >
+                       <p>Sexo</p><br> 
+                       <input type="radio" name="sexo" id="Masculino">
+                       <label for="Masculino">Masculino</label>
+                       <input type="radio" name="sexo" id="Femenino">
+                       <label for="Femenino">Femenino</label>
+                       <input type="radio" name="sexo" id="Otro">
+                       <label for="Otro">Otro</label>
+                       </div>
+                        <textarea rows="4" cols="80" placeholder="Dirección" class="step__input"></textarea>
+                        <input type="tel" placeholder="Teléfono (10 digitos)" class="step__input">
+                        <input type="email" placeholder="Email" class="step__input">
+                         <input type="text" placeholder="CURP" class="step__input">
+                    </div>
+                    <div class="step__footer">
+                        <button type="button" class="step__button step__button--back" data-to_step="1" data-step="2">Regresar</button>
+                        <button type="button" class="step__button step__button--next" data-to_step="3" data-step="2">Siguiente</button>
+                    </div>
+                </div>
+                <div class="step" id="step-3">
+                    <div class="step__header">
+                        <h2 class="step__title">Datos academicos<small> (Paso 3)</small></h2>
+                    </div>
+                    <div class="step__body">
+                        <input type="text" placeholder="Institución de procedencia (Licenciatura)" class="step__input">
+                        <input type="text" placeholder="Carrera y Especialidad" class="step__input">
+                        <input type="text" placeholder="Promedio" class="step__input">
+                        <input type="text" placeholder="Institución de procedencia (Maestría)" class="step__input">
+                       <div class="radio step__input" >
+                       <p>Titulado</p><br> 
+                       <input type="radio" name="Titulado" id="Si">
+                       <label for="Si">Si</label>
+                       <input type="radio" name="Titulado" id="No">
+                       <label for="No">No</label>
+                       </div>
+                       <div class="tentativa step__input" >
+                       <p>Fecha tentativa de titulación</p><br> 
+                       <input type="date" name="Fecha tentativa de titulación" class="step__input">
+                      </div>
+                       <div class="tentativa step__input" >
+                       <p>Como se entero de nuestro programa de Doctorado</p><br> 
+                       <select name="Programa" class="step__input">
+                           <option>Convocatoria</option>
+                           <option>Página web instucional</option>
+                           <option>Redes sociales</option>
+                           <option>Recomendación</option>
+                       </select>                                  
+                      </div>
+                       <div class="radio step__input" >
+                       <p>¿Cuenta con beca?</p><br> 
+                       <input type="radio" name="BecaSi" id="BecaSi">
+                       <label for="BecaSi">Si</label>
+                       <input type="radio" name="BecaSi" id="BecaNo">
+                       <label for="BecaNo">No</label>
+                       </div>
+                       <div class="radio step__input" >
+                       <p>¿Va a solicitar beca?</p><br> 
+                       <input type="radio" name="SolicitarSi" id="SolicitarSi">
+                       <label for="SolicitarSi">Si</label>
+                       <input type="radio" name="SolicitarSi" id="SolicitarNo">
+                       <label for="SolicitarNo">No</label>
+                       </div>
+                      <div class="tentativa step__input" >
+                       <p>Declaro que toda la información dada es correcta</p><br> 
+                       <input type="text" placeholder="Nombre" class="step__input">
+                      </div>
+                      <div class="Hoy step__input" >
+                       <p>Fecha de registro</p><br> 
+                       <input type="date" name="Fecha" class="step__input">
+                      </div>
+                      
+                    </div>
+                    <div class="step__footer">
+                        <button type="button" class="step__button step__button--back" data-to_step="2" data-step="3">Regresar</button>
+                        <button type="submit" class="step__button">Registrarse</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
